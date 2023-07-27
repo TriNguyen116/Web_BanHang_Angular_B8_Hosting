@@ -1,0 +1,59 @@
+.form-container {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  border: 1px solid #ccc;
+  border-radius: 8px; 
+}
+.title-pay{
+  font-size: 30px;
+}
+.bottom-pay-item {
+  border-bottom: 1px dashed #CCC;
+  width: 150px;
+}
+.total {
+  align-items: center ;
+  margin: 10px;
+
+}
+.form-group {
+  display: flex;
+  flex-direction: row; 
+  align-items: center ;
+  margin: 10px;
+}
+.cart {
+  align-items: center; 
+  width: 100%;
+  margin-left: 150px;
+}
+.form-group p {
+  width: 30%; 
+}
+
+.form-group label {
+  width: 100px; 
+  
+}
+
+button {
+  width: 200px;
+  background-color: #7F8C8D;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #616A6B;
+}
+
+button:active {
+  background-color: #424949;
+}

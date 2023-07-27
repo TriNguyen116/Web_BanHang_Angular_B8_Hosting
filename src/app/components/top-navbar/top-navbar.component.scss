@@ -1,0 +1,43 @@
+
+.bg-top-navbar { 
+  width: 100%;
+  height: 40px;
+  background-color: #292929;
+}
+
+.container-top-navbar {
+  width: 80%;
+  display: flex;
+  justify-content:space-between;
+  margin: 0 auto;
+}
+
+.phone {
+  color: #ccc;
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+  align-items: center;
+}
+
+.s-phone p{
+  margin-left: 5px;
+}
+
+.s-phone a {
+  color: #ccc;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.introduce {
+  color: #ccc;
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+  align-items: center;
+}
+
+.introduce p {
+  margin-left: 10px;
+}

@@ -1,0 +1,19 @@
+.content {
+  width: 80%;
+  height: 1000px;
+  margin: 0 auto;
+  background-color:  antiquewhite;
+  display: flex;
+}
+
+.content-right {
+  width: 70%;
+  height: 100%;
+  background: greenyellow;
+}
+
+.content-left {
+  width: 30%;
+  height: 100%;
+  background: gold;
+}

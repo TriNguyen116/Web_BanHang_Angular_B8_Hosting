@@ -1,0 +1,17 @@
+<div id="container">
+  <div class="form-container">
+    <div class="title-pay">
+      <p>Thanh Toán</p>
+    </div>
+    <div class="bottom-pay-item"></div>
+    <div class="form-group cart" *ngFor="let item of items">
+      <p>{{item.name}}</p>
+      <p>{{item.price}}</p>
+      <p>{{item.quantity}}</p>
+    </div>
+    <div class="total">
+      <p *ngIf="this.total !=0">Tổng tiền: {{this.total}}</p>
+      <button *ngIf="this.items.length != 0 && this.total == 0" (click) = "purchase()">Thanh Toán</button>
+    </div>
+  </div>
+</div>

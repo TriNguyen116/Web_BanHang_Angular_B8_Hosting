@@ -1,0 +1,21 @@
+.container {
+  margin: 0 auto;
+  width: 80%;
+}
+.left-container {
+  width: 65%; /* Chiều rộng của phần bên trái */
+  float: left; /* Đẩy phần tử bên trái về bên trái */
+  display: flex;
+  flex-wrap: wrap; /* Tự động xuống dòng khi không đủ không gian */
+  justify-content: space-between; /* Căn giữa các card */
+}
+
+.right-container {
+  width: 35%; /* Chiều rộng của phần bên phải */
+  float: right; /* Đẩy phần tử bên phải về bên phải */
+}
+
+.pay {
+  margin-top: 30px;
+}
+
