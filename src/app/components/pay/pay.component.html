@@ -8,10 +8,11 @@
       <p>{{item.name}}</p>
       <p>{{item.price}}</p>
       <p>{{item.quantity}}</p>
+      <button class="remove-button" (click)="removeItem(item)">x</button> 
     </div>
     <div class="total">
       <p *ngIf="this.total !=0">Tổng tiền: {{this.total}}</p>
-      <button *ngIf="this.items.length != 0 && this.total == 0" (click) = "purchase()">Thanh Toán</button>
+      <button (click) = "purchase()">Thanh Toán</button>
     </div>
   </div>
 </div>

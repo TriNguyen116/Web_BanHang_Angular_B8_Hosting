@@ -57,3 +57,28 @@ button:hover {
 button:active {
   background-color: #424949;
 }
+
+.remove-button {
+  width: 20px;
+  height: 25px;
+  background-color: #922B21;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+  margin-right: 100px;
+}
+
+.remove-button:hover {
+  background-color: #7B241C;
+}
+
+.remove-button:active {
+  background-color: #641E16;
+}

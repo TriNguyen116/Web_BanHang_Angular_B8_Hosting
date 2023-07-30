@@ -1,0 +1,19 @@
+<div id="container">
+  <form class="form-container">
+    <div class="title-add">
+      <p>Xóa Sản Phẩm</p>
+    </div>
+    <div class="bottom-delete-item"></div>
+    <div class="form-group">
+      <label for="name">Id:</label>
+      <input type="text" [formControl]="itemId">
+    </div>
+    <div class="form-group">
+      <label for="name">Tên Áo:</label>
+      <input type="text" [formControl]="itemName" >
+    </div>
+    <div class="form-group">
+      <button type="button"  (click)="deleteItem()">Xóa</button>
+    </div>
+  </form>
+</div>

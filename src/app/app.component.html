@@ -1,19 +1,2 @@
-<app-top-navbar></app-top-navbar>
-<app-navbar></app-navbar>
-<app-bottom-navbar></app-bottom-navbar>
-<app-top-main></app-top-main>
-<!-- <app-main></app-main> -->
-<div class="container">
-  <div class="right-container">
-    <div class="form">
-     <app-form [listItems]="listItems"></app-form>
-    </div>
-    <div class="pay">
-      <app-pay [items]="cart" ></app-pay>
-    </div>
-  </div>
-  <div class="left-container">
-    <app-card *ngFor="let item of listItems" [item]="item" (click)="addToCart(item)"></app-card>
-  </div>
-</div>
 
+<router-outlet></router-outlet>
