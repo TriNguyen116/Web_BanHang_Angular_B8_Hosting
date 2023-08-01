@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {Item} from './models/item.model';
+import { AuthService } from './services/auth.service';
+import { getAuth } from '@angular/fire/auth';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,7 +9,14 @@ import {Item} from './models/item.model';
 })
 export class AppComponent {
   title = 'Web-BanHang-B5';
-  constructor() {}
+  constructor(public auth:AuthService) {
+  }
+  login() {
+    this.auth.login()
+  }
+  logout() {
+    this.auth.logout()
+  }
   listItems: Item[] = [
     {
       id: '1',

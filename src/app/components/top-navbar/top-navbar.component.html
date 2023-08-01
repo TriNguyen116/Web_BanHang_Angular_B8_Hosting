@@ -15,6 +15,10 @@
       <p>Cách chọn Size</p>
       <p>Chính sách khách vip</p>
       <p>Giới thiệu</p>
+      <div class="in-out">
+        <button  class="login-btn" *ngIf="this.auth.user == null" (click)="login()">Login</button>
+        <button  class="logout-btn" *ngIf="this.auth.user !== null" (click)="logout()">Logout</button>
+      </div>
     </div>
   </div>
 </div>

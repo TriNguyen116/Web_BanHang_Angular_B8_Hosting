@@ -26,7 +26,7 @@ export class FormDeleteComponent {
     if (searchId) {
       this.dataService.deleteItemById(searchId);
     } else if (searchName) {
-      this.dataService.deleteItemByName(searchName);
+      // this.dataService.deleteItemByName(searchName);
     }
   }
   

@@ -1,12 +1,47 @@
 import { Injectable } from '@angular/core';
 import { Item } from '../models/item.model';
+import { Firestore, collection, addDoc, collectionSnapshots,deleteDoc, query, where, getDocs } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
+  listItems2: Item[] = []
+  itemCollection = collection(this.fireStore, 'items')
+  constructor( public fireStore: Firestore) { 
+    this.getData()
+    console.log(this.listItems2)
+  
+    // for(let item of this.listItems){
+    //   addDoc(this.itemCollection, item ) // push duy nhat mot lanx
+    // }
+    this.deleteItem("1");
+  }
 
-  constructor() { }
+
+  async getData(){
+    collectionSnapshots(this.itemCollection).subscribe((snapshot) => {
+      let result = snapshot.map((doc) => doc.data())
+      this.listItems2 = result as Item[]
+      console.log(this.listItems2)
+    })
+    // console.log(this.listItems2)
+    
+  }
+
+  async deleteItem(id: string) {
+    let q = query(this.itemCollection,where("id","==",id))
+    let docSnap = await getDocs(q);
+    let result = await deleteDoc(docSnap.docs[0].ref);
+    console.log(result)
+  } 
+
+  // async deleteItemWithName(name: string) {
+  //   let q = query(this.itemCollection,where("name","==",name))
+  //   let docSnap = await getDocs(q);
+  //   let result = await deleteDoc(docSnap.docs[0].ref);
+  //   console.log(result)
+  // }
   listItems: Item[] = [
     {
       id: '1',
@@ -57,24 +92,34 @@ export class DataService {
       photo: 'https://4menshop.com/cache/image/300x400/images/thumbs/2023/07/ao-polo-soc-ngang-phoi-co-form-regular-po114-mau-trang_small-18136.JPG'
     },
   ];
+
+
+
+
   addItems(newItem: Item) {
     newItem = {
       ...newItem,
     };
     this.listItems.push(newItem);
+    addDoc(this.itemCollection,newItem)
+    // let result = addDoc(this.itemCollection, newItem);
   }
+
+
   deleteItemById(id: string) {
     const index = this.listItems.findIndex(item => item.id === id);
     if (index !== -1) {
       this.listItems.splice(index, 1);
     }
+    this.deleteItem(id);
   }
 
-  deleteItemByName(name: string) {
-    const index = this.listItems.findIndex(item => item.name === name);
-    if (index !== -1) {
-      this.listItems.splice(index, 1);
-    }
-  }
+  // deleteItemByName(name: string) {
+  //   const index = this.listItems.findIndex(item => item.name === name);
+  //   if (index !== -1) {
+  //     this.listItems.splice(index, 1);
+  //   }
+  //   this.deleteItemByName(name)
+  // }
 
 }

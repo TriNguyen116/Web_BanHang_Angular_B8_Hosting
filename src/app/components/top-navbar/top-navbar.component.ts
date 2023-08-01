@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {faPhoneFlip} from '@fortawesome/free-solid-svg-icons'
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-top-navbar',
@@ -8,4 +9,12 @@ import {faPhoneFlip} from '@fortawesome/free-solid-svg-icons'
 })
 export class TopNavbarComponent {
   faPhoneFlip = faPhoneFlip;
+  constructor(public auth:AuthService) {
+  }
+  login() {
+    this.auth.login()
+  }
+  logout() {
+    this.auth.logout()
+  }
 }

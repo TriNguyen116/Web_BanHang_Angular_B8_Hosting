@@ -6,8 +6,10 @@
     <div class="sm-img">
       <img src="{{item.photo}}" alt="" />
     </div>
+    <div>
       <p id="name">{{item.name}}</p>
       <p id="price">{{item.price}}</p>
       <p id="stock">{{item.stock}}</p>
+      <button class="remove" (click)="remove()" >Xóa</button>
     </div>
 </div>
