@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Item } from '../models/item.model';
-import { Firestore, collection, addDoc, collectionSnapshots,deleteDoc, query, where, getDocs } from '@angular/fire/firestore';
+import { Firestore, collection, addDoc, collectionSnapshots,deleteDoc, query, where, getDocs, updateDoc } from '@angular/fire/firestore';
+import { async } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { UpdateItemComponent } from '../components/update-item/update-item.component';
 
 @Injectable({
   providedIn: 'root'
@@ -8,14 +11,14 @@ import { Firestore, collection, addDoc, collectionSnapshots,deleteDoc, query, wh
 export class DataService {
   listItems2: Item[] = []
   itemCollection = collection(this.fireStore, 'items')
-  constructor( public fireStore: Firestore) { 
+  constructor( public fireStore: Firestore, public dialog: MatDialog) { 
     this.getData()
     console.log(this.listItems2)
   
     // for(let item of this.listItems){
     //   addDoc(this.itemCollection, item ) // push duy nhat mot lanx
     // }
-    this.deleteItem("1");
+    // this.deleteItem("1");
   }
 
 
@@ -35,6 +38,18 @@ export class DataService {
     let result = await deleteDoc(docSnap.docs[0].ref);
     console.log(result)
   } 
+
+  async updateItem(id: string, item:Item) {
+    let q = query(this.itemCollection,where("id","==",id))
+    let docSnap = await getDocs(q);
+    let result = await updateDoc(docSnap.docs[0].ref, {...item})
+  }
+
+  subItem!:Item
+  modify(item: Item){
+    this.subItem = item
+    this.dialog.open(UpdateItemComponent)
+  }
 
   // async deleteItemWithName(name: string) {
   //   let q = query(this.itemCollection,where("name","==",name))

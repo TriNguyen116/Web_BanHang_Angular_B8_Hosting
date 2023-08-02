@@ -11,7 +11,7 @@ import { DataService } from 'src/app/services/data.service';
 export class DetailItemsComponent {
   listItems!: Item[];
   constructor(public router: Router, public dataService: DataService) {
-    this.listItems = this.dataService.listItems;
+    // this.listItems = this.dataService.listItems2;
   }
   
 }

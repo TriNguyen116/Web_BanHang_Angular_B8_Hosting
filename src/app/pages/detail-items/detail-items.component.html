@@ -16,6 +16,6 @@
     </div>
   </div>
   <div class="left-container">
-    <app-card *ngFor="let item of listItems" [item]="item" ></app-card>
+    <app-card *ngFor="let item of this.dataService.listItems2" [item]="item" ></app-card>
   </div>
 </div>

@@ -12,9 +12,12 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { StoreModule } from '@ngrx/store';
+import { UpdateItemComponent } from './components/update-item/update-item.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
+    UpdateItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,6 +28,7 @@ import { StoreModule } from '@ngrx/store';
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     StoreModule.forRoot({}, {}),
+    BrowserAnimationsModule,
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

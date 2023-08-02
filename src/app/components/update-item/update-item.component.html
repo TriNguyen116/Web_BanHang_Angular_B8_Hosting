@@ -1,0 +1,31 @@
+<div id="container">
+  <form [formGroup]="myForm" type="submit" (submit)="submit()" class="form-container">
+    <div class="title-add">
+      <p>Thêm Sản Phẩm</p>
+    </div>
+    <div class="bottom-add-item"></div>
+    <div class="form-group">
+      <label for="name">Id:</label>
+      <input type="text" id="id" [formControl]="id">
+    </div>
+    <div class="form-group">
+      <label for="name">Tên Áo:</label>
+      <input type="text" id="name" [formControl]="name">
+    </div>
+    <div class="form-group">
+      <label for="price">Giá Tiền:</label>
+      <input type="number" id="price" [formControl]="price">
+    </div>
+    <div class="form-group">
+      <label for="stock">Còn Hàng: </label>
+      <input type="number" id="stock" [formControl]="stock">
+    </div>
+    <div class="form-group">
+      <label for="photo">Ảnh: </label>
+      <input type="text" id="photo" [formControl]="photo">
+    </div>
+    <div class="form-group">
+      <button type="submit">update</button>
+    </div>
+  </form>
+</div>

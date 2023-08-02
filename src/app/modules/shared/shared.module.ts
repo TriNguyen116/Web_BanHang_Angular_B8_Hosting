@@ -111,6 +111,7 @@ import { ReactiveFormsModule } from '@angular/forms';
         MatTableModule,
         MatPaginatorModule,
         TopNavbarComponent,
+        MatDialogModule,
         FontAwesomeModule,
         NavbarComponent,
         BottomNavbarComponent,
@@ -120,6 +121,7 @@ import { ReactiveFormsModule } from '@angular/forms';
        FormComponent,
     FormDeleteComponent,
       CommonModule,
+      ReactiveFormsModule,
 
     ],
     providers: [
