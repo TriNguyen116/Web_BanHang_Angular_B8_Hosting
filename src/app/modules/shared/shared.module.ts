@@ -42,6 +42,7 @@ import { CardComponent } from 'src/app/components/card/card.component';
 import { FormComponent } from 'src/app/components/form/form.component';
 import { FormDeleteComponent } from 'src/app/components/form-delete/form-delete.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule( {
@@ -92,6 +93,9 @@ import { ReactiveFormsModule } from '@angular/forms';
         MatPaginatorModule,
         FontAwesomeModule,
         ReactiveFormsModule,
+        HttpClientModule
+
+
     ],
     exports: [
         MatButtonModule,
@@ -122,7 +126,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormDeleteComponent,
       CommonModule,
       ReactiveFormsModule,
-
+      HttpClientModule
     ],
     providers: [
         MatDatepickerModule,

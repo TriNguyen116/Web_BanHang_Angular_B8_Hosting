@@ -17,4 +17,8 @@ export class NavbarComponent {
   navigateToHome () {
     this.router.navigate([''])
   }
+
+  navigateToCat () {
+    this.router.navigate(['cat-blog'])
+  }
 }

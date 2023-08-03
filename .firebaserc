@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "my-project1-b94ed"
+  },
+  "targets": {
+    "my-project1-b94ed": {
+      "hosting": {
+        "Web-BanHang-B5": [
+          "my-project1-b94ed"
+        ]
+      }
+    }
+  }
+}

@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Item } from 'src/app/models/item.model';
 import { DataService } from 'src/app/services/data.service';
 import { UpdateItemComponent } from '../update-item/update-item.component';
+import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
@@ -19,7 +20,7 @@ export class CardComponent {
     this.cart.push(item)
   }
 
-  constructor(public dataService: DataService, public dialog: MatDialog){
+  constructor(public dataService: DataService, public dialog: MatDialog, public authService: AuthService){
 
   }
   remove(){

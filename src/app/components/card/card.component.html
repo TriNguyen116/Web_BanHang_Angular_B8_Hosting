@@ -10,7 +10,7 @@
       <p id="name">{{item.name}}</p>
       <p id="price">{{item.price}}</p>
       <p id="stock">{{item.stock}}</p>
-      <button class="modify" (click)="modify(item)">Chinh sua</button>
-      <button class="remove" (click)="remove()" >Xóa</button>
+      <button class="modify" (click)="modify(item)" *ngIf="this.authService.user != null">Chỉnh Sửa</button>
+      <button class="remove" (click)="remove()" *ngIf="this.authService.user != null">Xóa</button>
     </div>
 </div>

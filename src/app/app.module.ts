@@ -14,6 +14,9 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { StoreModule } from '@ngrx/store';
 import { UpdateItemComponent } from './components/update-item/update-item.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EffectsModule } from '@ngrx/effects';
+import { CatFactEffects } from 'src/ngrx/effects/cat-fact.effect';
+import { catFactReducer } from 'src/ngrx/reducers/cat-fact.reducer';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,8 +30,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({catFact: catFactReducer }, {}),
     BrowserAnimationsModule,
+    EffectsModule.forRoot([CatFactEffects]),
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

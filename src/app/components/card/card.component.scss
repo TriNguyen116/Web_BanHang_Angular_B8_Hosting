@@ -30,3 +30,21 @@
 .remove:hover{
   background-color: #7B241C; /* Màu nền khi di chuột qua */
 }
+
+.modify {
+  background-color: #27AE60; 
+  border: none; 
+  color: white; 
+  padding: 10px 20px; 
+  text-align: center; 
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px; 
+  cursor: pointer; 
+  border-radius: 30px;
+  margin-right: 10px;
+}
+
+.modify:hover{
+  background-color: #145A32 ; /* Màu nền khi di chuột qua */
+}
