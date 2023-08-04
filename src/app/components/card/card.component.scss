@@ -2,6 +2,7 @@
   text-align: center;
   margin-bottom: 10px;
 }
+
 .lg-img img{
   width: 250px;
 }
@@ -9,6 +10,10 @@
 .sm-img img{
   margin-top: 10px;
   width: 30px;
+}
+
+.lg-img img:hover{
+  border:2px solid black;
 }
 #price {
   color: red;

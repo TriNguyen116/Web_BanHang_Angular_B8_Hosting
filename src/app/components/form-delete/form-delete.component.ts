@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import {FormControl, FormGroup, FormRecord} from '@angular/forms'
 import { Item } from 'src/app/models/item.model';
+import { AuthService } from 'src/app/services/auth.service';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -10,9 +11,10 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class FormDeleteComponent {
   listItems: Item[];
-  constructor(public dataService: DataService){
+  constructor(public dataService: DataService, public authService: AuthService){
     this.listItems = this.dataService.listItems
   }
+
   itemId: FormControl = new FormControl('');;
   itemName: FormControl = new FormControl('');;
   deleteItem() {

@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms'
 import { Item } from 'src/app/models/item.model';
+import { AuthService } from 'src/app/services/auth.service';
 import { DataService } from 'src/app/services/data.service';
 @Component({
   selector: 'app-form',
@@ -9,7 +10,7 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class FormComponent {
   listItems: Item[];
-  constructor(public dataService: DataService){
+  constructor(public dataService: DataService, public authService: AuthService){
     this.myForm.addControl('id', this.id);
     this.myForm.addControl('name', this.name);
     this.myForm.addControl('price', this.price);

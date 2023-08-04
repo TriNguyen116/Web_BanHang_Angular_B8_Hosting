@@ -13,7 +13,7 @@
       <input type="text" [formControl]="itemName" >
     </div> -->
     <div class="form-group">
-      <button type="button"  (click)="deleteItem()">Xóa</button>
+      <button type="button"  (click)="deleteItem()" *ngIf="this.authService.user != null">Xóa</button>
     </div>
   </form>
 </div>
